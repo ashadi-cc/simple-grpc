@@ -1,6 +1,6 @@
 syntax="proto3";
 
-//package definition when generate with golang
+//output folder when generate for golang
 option go_package="model/user";
 
 //package definition
