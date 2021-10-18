@@ -1,0 +1,33 @@
+syntax="proto3";
+
+//package definition when generate with golang
+option go_package="model/user";
+
+//package definition
+package user; 
+
+
+//request payload
+message GreetingRequest {
+    string name = 1;
+    string salutation = 2;
+}
+
+//response payload
+message GreetingResponse {
+    string GreetingMessage = 1;
+}
+
+message StreamRequest {
+    int32 id = 1;
+}
+
+message StreamResponse {
+    string result = 1;
+}
+
+//rpc service
+service UserService {
+    rpc GreetUser(GreetingRequest) returns (GreetingResponse);
+    rpc FetchData(StreamRequest) returns (stream StreamResponse);
+}
